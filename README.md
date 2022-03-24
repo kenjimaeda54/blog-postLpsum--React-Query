@@ -1,5 +1,5 @@
 # React Blog Loren
-Aplicacao feita em react com react query. </br>
+Aplicação feita em react com react query. </br>
 Api usada [JSON Placeholder](https://jsonplaceholder.typicode.com/) server.
 
 ## Motivcao 
@@ -40,6 +40,8 @@ const { data, isError, error, isLoading } = useQuery(
 
 ```
 
+##
+
 - Para melhorar a experiencia nas paginacoes foi usado o prefetchQuery, assim antes de ocorrer a mudanca de paginacao armazeno no cache os dados
 - Com essa abordagem sempre vou possuir no cache os dados suficientes para mostrar na tela,assim nao precisa da abordagem de loading
 - Para tudo ocorrer bem e ideal usar o KeePreviosData,assim quando as chaves serem iguais ele vai manter os dados
@@ -67,6 +69,8 @@ const { data, isError, error, isLoading } = useQuery(
   );
 
 ```
+##
+
 - Usei os conceitos  useMutation para deletar e fazer update dos valores
 - [UseMutation](https://react-query.tanstack.com/reference/useMutation#_top)  retorna um objeto gigante
 - PlaceholderJson de fato não possibilita atualização dos valores então apenas foi usado para fins de didáticos 
