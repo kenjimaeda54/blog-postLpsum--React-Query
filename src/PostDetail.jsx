@@ -25,7 +25,7 @@ async function updatePost(postId) {
 
 export function PostDetail({ post }) {
   const handleDelete = useMutation((postId) => deletePost(postId));
-
+  const handleUpdate = useMutation((postId) => updatePost(postId));
   // replace with useQuery
   const { data, isError, isLoading, error } = useQuery(
     //se nao fizer assim o react nao vai atualizar o post
@@ -47,7 +47,10 @@ export function PostDetail({ post }) {
       {handleDelete.isLoading && <span>Deletando...</span>}
       {handleDelete.isError && <span>Erro ao deletar o post</span>}
       {handleDelete.isSuccess && <span>Post deletado</span>}
-      <button> Update file</button>
+      <button onClick={() => handleUpdate.mutate(post.id)}> Update file</button>
+      {handleUpdate.isLoading && <span>Atualizando...</span>}
+      {handleUpdate.isError && <span>Erro ao atualizar o post</span>}
+      {handleUpdate.isSuccess && <span>Post update</span>}
       <p>{post.body}</p>
       <h4>Comments</h4>
       {data.map((comment) => (
